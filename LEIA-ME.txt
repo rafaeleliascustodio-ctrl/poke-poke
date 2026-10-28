@@ -1,0 +1,23 @@
+ORGANIZAÇÃO DOS SCRIPTS
+=======================
+
+Para manter o projeto modular e fácil de manter, separe a lógica
+nas seguintes subpastas:
+
+Battle/
+    Toda a lógica de batalha: sistema de turnos, cálculo de dano,
+    efetividade de tipos, menus de luta, IA do oponente e fluxo
+    de início/fim de combate.
+
+Gameplay/
+    Movimentação em grid do jogador e dos NPCs, detecção de colisão,
+    interações com o cenário, encontros em grama alta, diálogos e
+    transições entre cenas.
+
+Pokemon/
+    Dados dos Pokémon: espécies, status base, golpes, tipos,
+    evolução, ScriptableObjects e classes de dados em geral.
+
+Regra de ouro: evite dependências diretas entre as pastas. Se
+Battle precisar de dados de um Pokémon, leia-os através das
+classes de Pokemon/, nunca duplicando a informação.
